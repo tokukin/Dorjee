@@ -43,7 +43,12 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
-        <activity android:name=".HelloActivity"></activity>
+        <activity
+            android:name=".HelloActivity"
+            android:label="列表" />
+        <activity
+            android:name=".DetalActivity"
+            android:label="详情"></activity>
     </application>
 
 </manifest>
