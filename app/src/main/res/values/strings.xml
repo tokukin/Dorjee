@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">安卓学习</string>
+    <string name="title_activity_home">Dorjee</string>
+    <string name="title_home">主页</string>
+    <string name="title_dashboard">详情</string>
+    <string name="title_notifications">帮助</string>
+</resources>
