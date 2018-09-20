@@ -15,14 +15,24 @@ public class DetalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detal);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
+        Person person = (Person) intent.getSerializableExtra("guy");
 
-        TextView textview = findViewById(R.id.text_detal);
-        textview.setText("这是" + name + "的详情页面");
+        TextView textview = findViewById(R.id.text_detal_name);
+        TextView textview2 = findViewById(R.id.text_detal_age);
+        textview.setText("姓名："+person.getName());
+        textview2.setText("年龄："+person.getAge()+"");
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(person.getName()+"的详情");
+
 
 //        Toast.makeText(this, name,Toast.LENGTH_SHORT).show();
     }
 
-
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 }

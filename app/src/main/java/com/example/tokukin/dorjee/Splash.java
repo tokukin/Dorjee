@@ -22,8 +22,12 @@ public class Splash extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+//        Intent intent = new Intent(Splash.this,HelloActivity.class);
+//        startActivity(intent);
 
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

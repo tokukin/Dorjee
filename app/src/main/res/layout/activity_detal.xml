@@ -8,11 +8,23 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_detal"
+        android:id="@+id/text_detal_name"
         android:text="name"
         android:textSize="30sp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/black"
+        />
+    <TextView
+        android:id="@+id/text_detal_age"
+        android:text="age"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"/>
 
 </LinearLayout>

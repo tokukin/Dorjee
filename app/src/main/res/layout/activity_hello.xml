@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,14 +11,20 @@
         android:orientation="horizontal">
         <Button
             android:id="@+id/btnRefresh"
-            android:text="显示水果"
-            android:onClick="showList"
+            android:text="显示序列化"
+            android:onClick="showListP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btnPerson"
             android:text="显示人员"
             android:onClick="showListPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnweb"
+            android:text="打开百度"
+            android:onClick="showbaidu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -29,8 +34,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/list_view"
-        >
+        android:id="@+id/list_view">
     </ListView>
 
 </LinearLayout>

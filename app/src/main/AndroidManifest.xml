@@ -48,7 +48,9 @@
             android:label="列表" />
         <activity
             android:name=".DetalActivity"
-            android:label="详情"></activity>
+            android:label="详情" />
+        <activity android:name=".WebActivity"
+            android:label="网页"></activity>
     </application>
 
 </manifest>
