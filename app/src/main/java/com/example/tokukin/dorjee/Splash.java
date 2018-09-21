@@ -52,7 +52,7 @@ public class Splash extends Activity {
             public void run() {
                 try {
                     if (launchTime == 1) {
-                        Thread.sleep(2000);
+                        Thread.sleep(3000);
                     }
 
                     SimpleRepo.getJson("http://laotian.cn/ad.json", new SimpleRepo.JsonCallbackOnUI() {
@@ -65,7 +65,7 @@ public class Splash extends Activity {
                             text_cus_name.setText(indexAd.getCustomer());
                             text_cus_name.setVisibility(View.VISIBLE);
                             ImageView imageView = findViewById(R.id.img_1);
-                            Glide.with(Splash.this).load(ad).placeholder(R.drawable.logo).error(R.drawable.logo).transform(new GlideRoundTransform(Splash.this, 5)).into(imageView);
+                            Glide.with(Splash.this).load(ad).placeholder(R.drawable.icon).error(R.drawable.icon).transform(new GlideRoundTransform(Splash.this, 5)).into(imageView);
 
 
                         }
@@ -76,7 +76,7 @@ public class Splash extends Activity {
                         }
                     });
                     if (launchTime == 1) {
-                        Thread.sleep(2000);
+                        Thread.sleep(3000);
                     }
 
 

@@ -18,21 +18,19 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:layout_weight="1"
                 android:text="标签："
-                android:textSize="20sp"
+                android:textSize="14sp"
                 app:fontFamily="@font/allerta" />
 
             <TextView
                 android:id="@+id/text_detail_abs"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="标签详情"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -47,22 +45,20 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:layout_weight="1"
                 android:text="描述："
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/text_detail_bbs"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:text="描述详情"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
 
         </LinearLayout>
@@ -76,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="照片"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/img_star_detail"

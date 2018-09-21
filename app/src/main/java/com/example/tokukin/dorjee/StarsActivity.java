@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.wang.avi.*;
+
 import java.util.List;
 
 public class StarsActivity extends AppCompatActivity {
@@ -40,26 +41,32 @@ public class StarsActivity extends AppCompatActivity {
 
     private void initStarList() {
 
-        final Handler handler=new Handler();
+        final Handler handler = new Handler();
 //        等待中加载用户图片
-        new Thread("获取列表"){
-            public void run(){
+        new Thread("获取列表") {
+            public void run() {
                 try {
 
                     SimpleRepo.getJson("http://image.baidu.com/channel/listjson?pn=0&rn=10&tag1=%E6%98%8E%E6%98%9F&tag2=%E5%85%A8%E9%83%A8&ie=utf-8", new SimpleRepo.JsonCallbackOnUI() {
                         @Override
                         public void onSuccess(String json) {
-                            Stars stars_all=new Gson().fromJson(json,Stars.class);
+                            Stars stars_all = new Gson().fromJson(json, Stars.class);
                             //todo 获取明星实例
+
                             stars = stars_all.getData();
-
-
+                            Stars.DataBean ourteam = new Stars.DataBean();
+                            stars.remove(10);
+                            ourteam.setAbs("新知团队");
+                            ourteam.setTag("第四组天团成员");
+                            ourteam.setImage_url("local");
+                            ourteam.setDesc("湖北扬天翔、宁夏康彧，新疆宋宇，甘肃李得鑫、陈文焕");
+                            stars.add(ourteam);
 
                         }
 
                         @Override
                         public void onFailed() {
-                            Toast.makeText(StarsActivity.this,"网络请求失败",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StarsActivity.this, "网络请求失败", Toast.LENGTH_SHORT).show();
                         }
                     });
                     Thread.sleep(3000);
@@ -70,6 +77,7 @@ public class StarsActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+
                         ProgressBar progressBar = findViewById(R.id.loading);
                         TextView textView_loading = findViewById(R.id.text_loading);
                         progressBar.setVisibility(View.GONE);
@@ -114,9 +122,12 @@ public class StarsActivity extends AppCompatActivity {
             name.setText(star.getAbs());
 
             ImageView starimage = convertView.findViewById(R.id.starimg);
-
-            Glide.with(StarsActivity.this).load(star.getImage_url()).placeholder(R.drawable.logo).error(R.drawable.logo).transform(new GlideRoundTransform(StarsActivity.this,20)).into(starimage);
-
+            if (star.getImage_url() == "local") {
+                starimage.setImageResource(R.drawable.chinamobile);
+                starimage.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+            } else {
+                Glide.with(StarsActivity.this).load(star.getImage_url()).placeholder(R.drawable.logo).error(R.drawable.logo).transform(new GlideRoundTransform(StarsActivity.this, 20)).into(starimage);
+            }
 
             return convertView;
         }
@@ -139,7 +150,6 @@ public class StarsActivity extends AppCompatActivity {
 
 
     }
-
 
 
 }
