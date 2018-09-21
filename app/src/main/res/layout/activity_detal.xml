@@ -1,30 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".DetalActivity">
 
-    <TextView
-        android:id="@+id/text_detal_name"
-        android:text="name"
-        android:textSize="30sp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/black"
-        />
-    <TextView
-        android:id="@+id/text_detal_age"
-        android:text="age"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:text="标签："
+                android:textSize="20sp"
+                app:fontFamily="@font/allerta" />
+
+            <TextView
+                android:id="@+id/text_detail_abs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="标签详情"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:text="描述："
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_detail_bbs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="描述详情"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="照片"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_star_detail"
+            android:layout_width="320dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center"/>
+        <!--image_url-->
+    </LinearLayout>
+
+
+</ScrollView>

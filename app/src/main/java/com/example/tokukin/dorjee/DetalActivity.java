@@ -3,8 +3,11 @@ package com.example.tokukin.dorjee;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 
 public class DetalActivity extends AppCompatActivity {
@@ -15,16 +18,20 @@ public class DetalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detal);
 
         Intent intent = getIntent();
-        Person person = (Person) intent.getSerializableExtra("guy");
+        Stars.DataBean star = (Stars.DataBean) intent.getSerializableExtra("star");
+        TextView textabs = findViewById(R.id.text_detail_abs);
+        textabs.setText(star.getTag());
 
-        TextView textview = findViewById(R.id.text_detal_name);
-        TextView textview2 = findViewById(R.id.text_detal_age);
-        textview.setText("姓名："+person.getName());
-        textview2.setText("年龄："+person.getAge()+"");
+        TextView textbbs = findViewById(R.id.text_detail_bbs);
+        textbbs.setText(star.getDesc());
+        ImageView imgdetail = findViewById(R.id.img_star_detail);
+        Glide.with(DetalActivity.this).load(star.getImage_url()).placeholder(R.drawable.logo).error(R.drawable.logo).transform(new GlideRoundTransform(DetalActivity.this,0)).into(imgdetail);
+
+
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(person.getName()+"的详情");
+        getSupportActionBar().setTitle(star.getAbs());
 
 
 //        Toast.makeText(this, name,Toast.LENGTH_SHORT).show();
